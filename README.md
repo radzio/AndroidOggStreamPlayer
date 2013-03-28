@@ -1,4 +1,4 @@
-Android Ogg Stream Player
+[Android Ogg Stream Player](http://radzio.github.com/AndroidOggStreamPlayer/)
 =========================
 
 ## Introduction ##
