@@ -3,7 +3,7 @@ Android Ogg Stream Player
 
 ## Introduction ##
 
-This library allows you to play Ogg Live Streams on any Android device. It is based on JOrbis library everything is written in Java code.
+This library allows you to play Ogg Live Streams on any Android device. It is based on JOrbis  so everything is written in Java code.
 
 ## Usage ##
 
