@@ -2,71 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b38eb79-fe1b-49a3-9a97-b86ce755c291" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/res/drawable-hdpi/ic_launcher.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/res/drawable-ldpi/ic_launcher.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/res/drawable-mdpi/ic_launcher.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/res/drawable-xhdpi/ic_launcher.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/AndroidManifest.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/src/com/jcraft/jorbis/Block.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/src/com/jcraft/jogg/Buffer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/src/com/jcraft/jorbis/ChainingExample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/src/com/jcraft/jorbis/CodeBook.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/src/com/jcraft/jorbis/Comment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/src/com/jcraft/jorbis/DecodeExample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/src/net/droidlabs/audio/ogg/demo/DemoActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/src/com/jcraft/jorbis/Drft.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/src/com/jcraft/jorbis/DspState.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/src/com/jcraft/jorbis/Floor0.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/src/com/jcraft/jorbis/Floor1.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/src/com/jcraft/jorbis/FuncFloor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/src/com/jcraft/jorbis/FuncMapping.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/src/com/jcraft/jorbis/FuncResidue.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/src/com/jcraft/jorbis/FuncTime.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/src/com/jcraft/jorbis/Info.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/src/com/jcraft/jorbis/InfoMode.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/src/com/jcraft/jorbis/JOrbisException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/src/com/jcraft/jorbis/Lookup.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/src/com/jcraft/jorbis/Lpc.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/src/com/jcraft/jorbis/Lsp.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/src/com/jcraft/jorbis/Mapping0.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/src/com/jcraft/jorbis/Mdct.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/src/net/droidlabs/audio/ogg/OggStreamPlayer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/src/com/jcraft/jogg/Packet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/src/com/jcraft/jogg/Page.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/src/com/jcraft/jorbis/PsyInfo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/src/com/jcraft/jorbis/PsyLook.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/src/com/jcraft/jorbis/Residue0.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/src/com/jcraft/jorbis/Residue1.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/src/com/jcraft/jorbis/Residue2.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/src/com/jcraft/jorbis/StaticCodeBook.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/src/com/jcraft/jogg/StreamState.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/src/com/jcraft/jogg/SyncState.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/src/com/jcraft/jorbis/Time0.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/src/com/jcraft/jorbis/Util.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/src/com/jcraft/jorbis/VorbisFile.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/ant.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/ant.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/build.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/demo.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/library.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/res/layout/main.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/proguard-project.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/project.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/res/values/strings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="AndroidOggStreamPlayer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -76,7 +13,8 @@
     <file path="$PROJECT_DIR$/demo/gen/net/droidlabs/audio/ogg/demo/Manifest.java" changelist="4b38eb79-fe1b-49a3-9a97-b86ce755c291" time="1364483851941" ignored="false" />
     <file path="/DemoActivity.java" changelist="4b38eb79-fe1b-49a3-9a97-b86ce755c291" time="1364483941507" ignored="false" />
     <file path="/OggStreamPlayer.java" changelist="4b38eb79-fe1b-49a3-9a97-b86ce755c291" time="1364484037115" ignored="false" />
-    <file path="/Dummy.txt" changelist="4b38eb79-fe1b-49a3-9a97-b86ce755c291" time="1364484096215" ignored="false" />
+    <file path="/Dummy.txt" changelist="4b38eb79-fe1b-49a3-9a97-b86ce755c291" time="1364484255694" ignored="false" />
+    <file path="/README.md" changelist="4b38eb79-fe1b-49a3-9a97-b86ce755c291" time="1364484623747" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,10 +82,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DemoActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="DemoActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demo/src/net/droidlabs/audio/ogg/demo/DemoActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="33" selection-start="433" selection-end="433" vertical-scroll-proportion="0.42256215">
+            <state line="26" column="0" selection-start="715" selection-end="830" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="57" selection-start="423" selection-end="423" vertical-scroll-proportion="0.53333336">
               <folding />
             </state>
           </provider>
@@ -186,6 +133,7 @@
         <option value="$PROJECT_DIR$/demo/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/demo/src/net/droidlabs/audio/ogg/demo/DemoActivity.java" />
         <option value="$PROJECT_DIR$/library/src/net/droidlabs/audio/ogg/OggStreamPlayer.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -465,6 +413,11 @@
       <created>1364483147669</created>
       <updated>1364483147669</updated>
     </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <created>1364484338050</created>
+      <updated>1364484338050</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -537,7 +490,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -550,6 +503,7 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+    <MESSAGE value="Initial commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -577,7 +531,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/demo/src/net/droidlabs/audio/ogg/demo/DemoActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="33" selection-start="433" selection-end="433" vertical-scroll-proportion="0.42256215">
+        <state line="26" column="0" selection-start="715" selection-end="830" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="57" selection-start="423" selection-end="423" vertical-scroll-proportion="0.53333336">
           <folding />
         </state>
       </provider>
