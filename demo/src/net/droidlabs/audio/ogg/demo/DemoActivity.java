@@ -2,11 +2,13 @@ package net.droidlabs.audio.ogg.demo;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.os.StrictMode;
+import android.view.View;
 import net.droidlabs.audio.ogg.OggStreamPlayer;
 
 public class DemoActivity extends Activity
 {
+    private OggStreamPlayer player;
+
     /**
      * Called when the activity is first created.
      */
@@ -16,15 +18,17 @@ public class DemoActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
+        player = new OggStreamPlayer();
 
-        //do not kill me I will fix this later ;-)
-        if (android.os.Build.VERSION.SDK_INT > 9)
-        {
-            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-            StrictMode.setThreadPolicy(policy);
-        }
+    }
 
-        OggStreamPlayer player = new OggStreamPlayer("http://78.28.48.14:8000/stream.ogg");
-        player.start();
+    public void playAsync(View view)
+    {
+        player.playAsync("http://78.28.48.14:8000/stream.ogg");
+    }
+
+    public void stop(View view)
+    {
+        player.stop();
     }
 }

@@ -41,8 +41,11 @@ import java.net.UnknownServiceException;
  * The <code>OggStreamPlayer</code> thread class will simply download and play
  * OGG media. All you need to do is supply a valid URL as the first argument.
  */
-public class OggStreamPlayer extends Thread
+public class OggStreamPlayer
 {
+
+    public static final String TAG = OggStreamPlayer.class.getSimpleName();
+
     // If you wish to debug this source, please set the variable below to true.
     private final boolean debugMode = true;
 
@@ -78,36 +81,89 @@ public class OggStreamPlayer extends Thread
     private int[] pcmIndex;
 
     // Here are the four required JOgg objects...
-    private Packet joggPacket = new Packet();
-    private Page joggPage = new Page();
-    private StreamState joggStreamState = new StreamState();
-    private SyncState joggSyncState = new SyncState();
+    private Packet joggPacket;
+    private Page joggPage;
+    private StreamState joggStreamState;
+    private SyncState joggSyncState;
 
     // ... followed by the four required JOrbis objects.
-    private DspState jorbisDspState = new DspState();
-    private Block jorbisBlock = new Block(jorbisDspState);
-    private Comment jorbisComment = new Comment();
-    private Info jorbisInfo = new Info();
+    private DspState jorbisDspState;
+    private Block jorbisBlock;
+    private Comment jorbisComment;
+    private Info jorbisInfo;
     private AudioTrack track;
+    private boolean isStopped = false;
 
-
-    /**
-     * The constructor; will configure the <code>InputStream</code>.
-     *
-     * @param pUrl the URL to be opened
-     */
-    public OggStreamPlayer(String pUrl)
+    public OggStreamPlayer()
     {
-        configureInputStream(getUrl(pUrl));
+
     }
 
     /**
      * Given a string, <code>getUrl()</code> will return an URL object.
      *
-     * @param pUrl the URL to be opened
+     * @param url the URL to be opened
      * @return the URL object
      */
-    public URL getUrl(String pUrl)
+
+    public void play(String url)
+    {
+        play(getUrl(url));
+    }
+
+    public void play(URL url)
+    {
+        isStopped = false;
+
+        joggStreamState = new StreamState();
+        joggSyncState = new SyncState();
+
+        // ... followed by the four required JOrbis objects.
+        jorbisDspState = new DspState();
+        jorbisBlock = new Block(jorbisDspState);
+        jorbisComment = new Comment();
+        jorbisInfo = new Info();
+
+
+        joggPacket = new Packet();
+        joggPage = new Page();
+
+        configureInputStream(url);
+
+        playImpl();
+    }
+
+    public void playAsync(String url)
+    {
+        playAsync(getUrl(url));
+    }
+
+    public void playAsync(final URL url)
+    {
+        new Thread(new Runnable()
+        {
+            public void run()
+            {
+                try
+                {
+                    play(url);
+                }
+                catch (Exception e)
+                {
+                    Log.e(TAG, "playAsync():", e);
+
+                    //if (playerCallback != null) playerCallback.playerException( e );
+                }
+            }
+        }).start();
+    }
+
+    public void stop()
+    {
+        isStopped = true;
+    }
+
+    private URL getUrl(String pUrl)
     {
         URL url = null;
 
@@ -168,7 +224,7 @@ public class OggStreamPlayer extends Thread
      * JOgg JOrbis libraries, read the header, initialize the sound system, read
      * the body of the stream and clean up.
      */
-    public void run()
+    private void playImpl()
     {
         // Check that we got an InputStream.
         if (inputStream == null)
@@ -213,7 +269,7 @@ public class OggStreamPlayer extends Thread
         joggSyncState.buffer(bufferSize);
 
 		/*
-		 * Fill the buffer with the data from SyncState's internal buffer. Note
+         * Fill the buffer with the data from SyncState's internal buffer. Note
 		 * how the size of this new buffer is different from bufferSize.
 		 */
         buffer = joggSyncState.data;
@@ -492,23 +548,27 @@ public class OggStreamPlayer extends Thread
         int channels = jorbisInfo.channels;
         int rate = jorbisInfo.rate;
 
+        int minimumBufferSize;
+
         if (channels == 1)
         {
+            minimumBufferSize = AudioTrack.getMinBufferSize(rate, AudioFormat.CHANNEL_OUT_MONO, AudioFormat.ENCODING_PCM_16BIT);
             track = new AudioTrack(AudioManager.STREAM_MUSIC,
-                                    rate,
-                                    AudioFormat.CHANNEL_OUT_MONO,
-                                    AudioFormat.ENCODING_PCM_16BIT,
-                                    bufferSize,
-                                    AudioTrack.MODE_STREAM);
+                    rate,
+                    AudioFormat.CHANNEL_OUT_MONO,
+                    AudioFormat.ENCODING_PCM_16BIT,
+                    bufferSize < minimumBufferSize ? minimumBufferSize : bufferSize ,
+                    AudioTrack.MODE_STREAM);
         }
         else
         {
+            minimumBufferSize = AudioTrack.getMinBufferSize(rate, AudioFormat.CHANNEL_OUT_STEREO, AudioFormat.ENCODING_PCM_16BIT);
             track = new AudioTrack(AudioManager.STREAM_MUSIC,
-                                    rate,
-                                    AudioFormat.CHANNEL_OUT_STEREO,
-                                    AudioFormat.ENCODING_PCM_16BIT,
-                                    bufferSize,
-                                    AudioTrack.MODE_STREAM);
+                    rate,
+                    AudioFormat.CHANNEL_OUT_STEREO,
+                    AudioFormat.ENCODING_PCM_16BIT,
+                    bufferSize < minimumBufferSize ? minimumBufferSize : bufferSize,
+                    AudioTrack.MODE_STREAM);
         }
 
 
@@ -540,7 +600,7 @@ public class OggStreamPlayer extends Thread
 		 */
         boolean needMoreData = true;
 
-        while (needMoreData)
+        while (needMoreData && isStopped == false)
         {
             switch (joggSyncState.pageout(joggPage))
             {
@@ -650,14 +710,33 @@ public class OggStreamPlayer extends Thread
         jorbisInfo.clear();
         joggSyncState.clear();
 
+        track.stop();
+
+        urlConnection = null;
+
         // Closes the stream.
         try
         {
-            if (inputStream != null) inputStream.close();
+            if (inputStream != null)
+                inputStream.close();
+            inputStream = null;
         }
         catch (Exception e)
         {
         }
+
+
+        buffer = null;
+        bufferSize = 2048;
+
+        count = 0;
+        index = 0;
+
+        convertedBuffer = null;
+        convertedBufferSize = 0;
+
+        pcmInfo = null;
+        pcmIndex = null;
 
         debugOutput("Done cleaning up.");
     }
@@ -667,6 +746,7 @@ public class OggStreamPlayer extends Thread
      */
     private void decodeCurrentPacket()
     {
+
         int samples;
 
         // Check that the packet is a audio data packet etc.
