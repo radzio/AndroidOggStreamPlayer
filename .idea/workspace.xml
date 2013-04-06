@@ -26,15 +26,15 @@
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_LOG_LEVEL" value="ERROR" />
   </component>
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="library:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="4b38eb79-fe1b-49a3-9a97-b86ce755c291" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/library_jar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/AndroidManifest.xml" afterPath="$PROJECT_DIR$/demo/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/net/droidlabs/audio/ogg/demo/DemoActivity.java" afterPath="$PROJECT_DIR$/demo/src/net/droidlabs/audio/ogg/demo/DemoActivity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/src/net/droidlabs/audio/ogg/OggStreamPlayerCallback.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/src/net/droidlabs/audio/ogg/OggStreamPlayer.java" afterPath="$PROJECT_DIR$/library/src/net/droidlabs/audio/ogg/OggStreamPlayer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ant.xml" afterPath="$PROJECT_DIR$/.idea/ant.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/demo.iml" afterPath="$PROJECT_DIR$/demo/demo.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/res/layout/main.xml" afterPath="$PROJECT_DIR$/demo/res/layout/main.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="AndroidOggStreamPlayer.iws" />
@@ -44,7 +44,7 @@
     <file path="$PROJECT_DIR$/demo/gen/net/droidlabs/audio/ogg/demo/BuildConfig.java" changelist="4b38eb79-fe1b-49a3-9a97-b86ce755c291" time="1364483851941" ignored="false" />
     <file path="$PROJECT_DIR$/demo/gen/net/droidlabs/audio/ogg/demo/Manifest.java" changelist="4b38eb79-fe1b-49a3-9a97-b86ce755c291" time="1364483851941" ignored="false" />
     <file path="/DemoActivity.java" changelist="4b38eb79-fe1b-49a3-9a97-b86ce755c291" time="1364497116886" ignored="false" />
-    <file path="/OggStreamPlayer.java" changelist="4b38eb79-fe1b-49a3-9a97-b86ce755c291" time="1365266448813" ignored="false" />
+    <file path="/OggStreamPlayer.java" changelist="4b38eb79-fe1b-49a3-9a97-b86ce755c291" time="1365267977101" ignored="false" />
     <file path="/Dummy.txt" changelist="4b38eb79-fe1b-49a3-9a97-b86ce755c291" time="1365266859940" ignored="false" />
     <file path="/README.md" changelist="4b38eb79-fe1b-49a3-9a97-b86ce755c291" time="1364484672829" ignored="false" />
     <file path="/main.xml" changelist="4b38eb79-fe1b-49a3-9a97-b86ce755c291" time="1364497287140" ignored="false" />
@@ -59,6 +59,15 @@
     <file path="$PROJECT_DIR$/../ScrobbleFM/ScrobbleFMPro/project.properties" changelist="4b38eb79-fe1b-49a3-9a97-b86ce755c291" time="1365239210106" ignored="false" />
     <file path="$PROJECT_DIR$/../ScrobbleFM/ScrobbleFMPro/gen/com/scrobblefm/pro/BuildConfig.java" changelist="4b38eb79-fe1b-49a3-9a97-b86ce755c291" time="1365239211753" ignored="false" />
     <file path="$PROJECT_DIR$/../ScrobbleFM/ScrobbleFMCore/gen/com/scrobblefm/R.java" changelist="4b38eb79-fe1b-49a3-9a97-b86ce755c291" time="1365239232011" ignored="false" />
+    <file path="/OggStreamPlayerCallback.java" changelist="4b38eb79-fe1b-49a3-9a97-b86ce755c291" time="1365267398030" ignored="false" />
+    <file path="/a.dummy" changelist="4b38eb79-fe1b-49a3-9a97-b86ce755c291" time="1365267739374" ignored="false" />
+    <file path="$PROJECT_DIR$/../ScrobbleFM/ScrobbleFM/proguard.cfg" changelist="4b38eb79-fe1b-49a3-9a97-b86ce755c291" time="1365268354357" ignored="false" />
+    <file path="/proguard.cfg" changelist="4b38eb79-fe1b-49a3-9a97-b86ce755c291" time="1365268354357" ignored="false" />
+    <file path="$PROJECT_DIR$/../ScrobbleFM/ScrobbleFMCore/src/com/scrobblefm/services/player/OggPlayer.java" changelist="4b38eb79-fe1b-49a3-9a97-b86ce755c291" time="1365268533065" ignored="false" />
+    <file path="$PROJECT_DIR$/../ScrobbleFM/ScrobbleFMCore/src/com/scrobblefm/model/Stream.java" changelist="4b38eb79-fe1b-49a3-9a97-b86ce755c291" time="1365268485237" ignored="false" />
+    <file path="/Stream.java" changelist="4b38eb79-fe1b-49a3-9a97-b86ce755c291" time="1365268409552" ignored="false" />
+    <file path="/OggPlayer.java" changelist="4b38eb79-fe1b-49a3-9a97-b86ce755c291" time="1365268428622" ignored="false" />
+    <file path="$PROJECT_DIR$/../ScrobbleFM/ScrobbleFMCore/src/com/scrobblefm/synchronization/SynchronizeTask.java" changelist="4b38eb79-fe1b-49a3-9a97-b86ce755c291" time="1365268957966" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,21 +120,6 @@
       </breakpoint>
     </breakpoint_any>
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/library/src/net/droidlabs/audio/ogg/OggStreamPlayer.java" line="313" class="net.droidlabs.audio.ogg.OggStreamPlayer" package="net.droidlabs.audio.ogg">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
       <breakpoint url="file://$PROJECT_DIR$/library/src/com/jcraft/jogg/SyncState.java" line="84" class="com.jcraft.jogg.SyncState" package="com.jcraft.jogg">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
@@ -235,13 +229,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OggStreamPlayer.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="OggStreamPlayer.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/library/src/net/droidlabs/audio/ogg/OggStreamPlayer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="585" column="60" selection-start="18963" selection-end="18963" vertical-scroll-proportion="0.80626225">
+            <state line="269" column="9" selection-start="7475" selection-end="7475" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#4474#4930#0" expanded="true" />
+                <element signature="e#4919#4920#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OggStreamPlayerCallback.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/library/src/net/droidlabs/audio/ogg/OggStreamPlayerCallback.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="48" selection-start="205" selection-end="205" vertical-scroll-proportion="0.35687023">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -277,6 +282,7 @@
         <option value="$PROJECT_DIR$/demo/res/layout/main.xml" />
         <option value="$PROJECT_DIR$/library/src/com/jcraft/jogg/SyncState.java" />
         <option value="$PROJECT_DIR$/demo/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/library/src/net/droidlabs/audio/ogg/OggStreamPlayerCallback.java" />
         <option value="$PROJECT_DIR$/library/src/net/droidlabs/audio/ogg/OggStreamPlayer.java" />
       </list>
     </option>
@@ -336,6 +342,48 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="AndroidOggStreamPlayer" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AndroidOggStreamPlayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="library" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AndroidOggStreamPlayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="library" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ogg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AndroidOggStreamPlayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="library" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -515,7 +563,7 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
-  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false">
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
     <option name="USER" value="" />
     <option name="PASSWORD" value="" />
     <option name="mySSHConnectionTimeout" value="30000" />
@@ -525,7 +573,6 @@
     <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
     <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
     <option name="IGNORE_SPACES_IN_MERGE" value="false" />
-    <option name="DETECT_NESTED_COPIES" value="true" />
     <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
     <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
     <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
@@ -555,7 +602,11 @@
       <created>1364486602796</created>
       <updated>1364486602796</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Small fixes and improvements. &#10;&#10;Fixed issue #3">
+      <created>1365266876118</created>
+      <updated>1365266876118</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -566,13 +617,14 @@
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.6703297" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3992674" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.6715507" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -583,14 +635,13 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.6703297" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24230146" sideWeight="0.24297924" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959481" sideWeight="0.6715507" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.6703297" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.6703297" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.6703297" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -664,21 +715,13 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/demo/res/layout/main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="39" selection-start="499" selection-end="499" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/library/src/net/droidlabs/audio/ogg/OggStreamPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="194" column="25" selection-start="5365" selection-end="5365" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4474#4930#0" expanded="true" />
+            <element signature="e#4919#4920#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -719,6 +762,8 @@
         <state line="172" column="39" selection-start="4776" selection-end="4776" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4474#4930#0" expanded="true" />
+            <element signature="e#4919#4920#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -782,10 +827,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/library/src/net/droidlabs/audio/ogg/OggStreamPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="585" column="60" selection-start="18963" selection-end="18963" vertical-scroll-proportion="0.80626225">
+        <state line="269" column="9" selection-start="7475" selection-end="7475" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4474#4930#0" expanded="true" />
+            <element signature="e#4919#4920#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/src/net/droidlabs/audio/ogg/OggStreamPlayerCallback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="48" selection-start="205" selection-end="205" vertical-scroll-proportion="0.35687023">
+          <folding />
         </state>
       </provider>
     </entry>

@@ -94,9 +94,16 @@ public class OggStreamPlayer
     private AudioTrack track;
     private boolean isStopped = false;
 
+    private OggStreamPlayerCallback playerCallback;
+
+    public OggStreamPlayer(OggStreamPlayerCallback playerCallback)
+    {
+        this.playerCallback = playerCallback;
+    }
+
     public OggStreamPlayer()
     {
-
+        this(null);
     }
 
     /**
@@ -114,6 +121,11 @@ public class OggStreamPlayer
     public void play(URL url)
     {
         isStopped = false;
+
+        if (playerCallback != null)
+        {
+            playerCallback.playerStarted();
+        }
 
         joggStreamState = new StreamState();
         joggSyncState = new SyncState();
@@ -152,7 +164,10 @@ public class OggStreamPlayer
                 {
                     Log.e(TAG, "playAsync():", e);
 
-                    //if (playerCallback != null) playerCallback.playerException( e );
+                    if (playerCallback != null)
+                    {
+                        playerCallback.playerException( e );
+                    }
                 }
             }
         }).start();
@@ -173,7 +188,7 @@ public class OggStreamPlayer
         }
         catch (MalformedURLException exception)
         {
-            Log.e("Jorbis", "Malformed \"url\" parameter: \"" + pUrl + "\"");
+            Log.e(TAG, "Malformed \"url\" parameter: \"" + pUrl + "\"");
         }
 
         return url;
@@ -194,11 +209,11 @@ public class OggStreamPlayer
         }
         catch (UnknownServiceException exception)
         {
-            Log.e("Jorbis", "The protocol does not support input.");
+            Log.e(TAG, "The protocol does not support input.");
         }
         catch (IOException exception)
         {
-            Log.e("Jorbis", "An I/O error occoured while trying create the "
+            Log.e(TAG, "An I/O error occoured while trying create the "
                     + "URL connection.");
         }
 
@@ -211,9 +226,9 @@ public class OggStreamPlayer
             }
             catch (IOException exception)
             {
-                Log.e("Jorbis", "An I/O error occoured while trying to get an "
+                Log.e(TAG, "An I/O error occoured while trying to get an "
                         + "input stream from the URL.");
-                //Log.e("Jorbis", exception);
+                //Log.e(TAG, exception);
             }
         }
     }
@@ -229,8 +244,7 @@ public class OggStreamPlayer
         // Check that we got an InputStream.
         if (inputStream == null)
         {
-            Log.e("Jorbis", "We don't have an input stream and therefor "
-                    + "cannot continue.");
+            Log.e(TAG, "We don't have an input stream and therefor cannot continue.");
             return;
         }
 
@@ -251,6 +265,12 @@ public class OggStreamPlayer
 
         // Afterwards, we clean up.
         cleanUp();
+
+        if (playerCallback != null)
+        {
+            playerCallback.playerStopped();
+        }
+
     }
 
     /**
@@ -315,7 +335,7 @@ public class OggStreamPlayer
             }
             catch (IOException exception)
             {
-                Log.e("Jorbis", "Could not read from the input stream.");
+                Log.e(TAG, "Could not read from the input stream.");
 
             }
 
@@ -339,8 +359,7 @@ public class OggStreamPlayer
                         // If there is a hole in the data, we must exit.
                         case -1:
                         {
-                            Log.e("Jorbis", "There is a hole in the first "
-                                    + "packet data.");
+                            Log.e(TAG, "There is a hole in the first packet data.");
                             return false;
                         }
 
@@ -371,8 +390,7 @@ public class OggStreamPlayer
                             // Check the page (serial number and stuff).
                             if (joggStreamState.pagein(joggPage) == -1)
                             {
-                                Log.e("Jorbis", "We got an error while "
-                                        + "reading the first header page.");
+                                Log.e(TAG, "We got an error while reading the first header page.");
                                 return false;
                             }
 
@@ -382,8 +400,7 @@ public class OggStreamPlayer
 							 */
                             if (joggStreamState.packetout(joggPacket) != 1)
                             {
-                                Log.e("Jorbis", "We got an error while "
-                                        + "reading the first header packet.");
+                                Log.e(TAG, "We got an error while reading the first header packet.");
                                 return false;
                             }
 
@@ -393,12 +410,9 @@ public class OggStreamPlayer
 							 * among other things. If this fails, it's not
 							 * Vorbis data.
 							 */
-                            if (jorbisInfo.synthesis_headerin(jorbisComment,
-                                    joggPacket) < 0)
+                            if (jorbisInfo.synthesis_headerin(jorbisComment, joggPacket) < 0)
                             {
-                                Log.e("Jorbis", "We got an error while "
-                                        + "interpreting the first packet. "
-                                        + "Apparantly, it's not Vorbis data.");
+                                Log.e(TAG, "We got an error while interpreting the first packet. Apparantly, it's not Vorbis data.");
                                 return false;
                             }
 
@@ -426,8 +440,7 @@ public class OggStreamPlayer
                         // If there is a hole in the data, we must exit.
                         case -1:
                         {
-                            Log.e("Jorbis", "There is a hole in the second "
-                                    + "or third packet data.");
+                            Log.e(TAG, "There is a hole in the second or third packet data.");
                             return false;
                         }
 
@@ -456,9 +469,7 @@ public class OggStreamPlayer
                                 // If there is a hole in the data, we must exit.
                                 case -1:
                                 {
-                                    System.err
-                                            .println("There is a hole in the first"
-                                                    + "packet data.");
+                                    Log.e(TAG, "There is a hole in the first packet data.");
                                     return false;
                                 }
 
@@ -511,7 +522,7 @@ public class OggStreamPlayer
 			 */
             if (count == 0 && needMoreData)
             {
-                Log.e("Jorbis", "Not enough header data was supplied.");
+                Log.e(TAG, "Not enough header data was supplied.");
                 return false;
             }
         }
@@ -842,7 +853,12 @@ public class OggStreamPlayer
     {
         if (debugMode)
         {
-            Log.e("Jorbis", "Debug: " + output);
+            Log.d(TAG, "Debug: " + output);
         }
+    }
+    
+    public void setPlayerCallback(OggStreamPlayerCallback playerCallback)
+    {
+        this.playerCallback = playerCallback;
     }
 }
