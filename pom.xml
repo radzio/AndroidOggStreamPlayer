@@ -12,7 +12,7 @@
     <groupId>net.droidlabs.android.ogg</groupId>
     <artifactId>parent</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.1</version>
+    <version>1.0.2-SNAPSHOT</version>
 
     <name>DroidLabs (Parent)</name>
     <description>Test.</description>
@@ -27,7 +27,7 @@
         <url>https://github.com/radzio/AndroidOggStreamPlayer</url>
         <connection>scm:git:git://github.com/radzio/AndroidOggStreamPlayer.git</connection>
         <developerConnection>scm:git:git@github.com:radzio/AndroidOggStreamPlayer.git</developerConnection>
-        <tag>1.0.1</tag>
+        <tag>parent-1.0.0</tag>
     </scm>
 
     <developers>
