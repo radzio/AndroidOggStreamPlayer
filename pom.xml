@@ -12,7 +12,7 @@
     <groupId>net.droidlabs.android.audio.ogg</groupId>
     <artifactId>parent</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
 
     <name>Android Ogg Stream Player</name>
     <description>This library allows you to play Ogg Live Streams on any Android device. It is based on JOrbis so everything is written in Java code.</description>
