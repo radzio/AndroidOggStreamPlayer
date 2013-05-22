@@ -9,25 +9,26 @@
         <version>7</version>
     </parent>
 
-    <groupId>net.droidlabs.android.ogg</groupId>
+    <groupId>net.droidlabs.android.audio.ogg</groupId>
     <artifactId>parent</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
 
-    <name>DroidLabs (Parent)</name>
-    <description>Test.</description>
+    <name>Android Ogg Stream Player</name>
+    <description>This library allows you to play Ogg Live Streams on any Android device. It is based on JOrbis so everything is written in Java code.</description>
     <url>http://droidlabs.net</url>
     <inceptionYear>2013</inceptionYear>
 
     <modules>
-        <module>library</module>
+        <module>player</module>
+		<module>player-demo</module>
     </modules>
 
     <scm>
         <url>https://github.com/radzio/AndroidOggStreamPlayer</url>
         <connection>scm:git:git://github.com/radzio/AndroidOggStreamPlayer.git</connection>
         <developerConnection>scm:git:git@github.com:radzio/AndroidOggStreamPlayer.git</developerConnection>
-        <tag>parent-1.0.0</tag>
+        <tag>1.0.0</tag>
     </scm>
 
     <developers>
@@ -39,6 +40,7 @@
             <timezone>+1</timezone>
             <roles>
                 <role>developer</role>
+				<role>owner</role>
             </roles>
         </developer>
     </developers>
